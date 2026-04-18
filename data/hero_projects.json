@@ -1,0 +1,120 @@
+{
+  "description": "Five real voluntary carbon market projects used as demo cases. The synthetic_forest_bias_before/after fields control the offline fallback so the demo tells the right story even without network. When real Planetary Computer data is available, these fields are ignored.",
+  "projects": [
+    {
+      "id": "VCS-0902",
+      "name": "Kariba REDD+",
+      "country": "Zimbabwe",
+      "lat": -16.75,
+      "lon": 28.80,
+      "project_type": "REDD+ (Reduced Emissions from Deforestation)",
+      "date_start": "2016-06-01",
+      "date_end": "2016-09-30",
+      "date_after_start": "2023-06-01",
+      "date_after_end": "2023-09-30",
+      "claimed_forest_cover_pct": 85.0,
+      "synthetic_forest_bias_before": 0.78,
+      "synthetic_forest_bias_after": 0.52,
+      "summary_claims": [
+        "We are proud to deliver a world-class REDD+ project that protects forests and empowers communities.",
+        "Our carbon credits represent high-integrity, high-impact climate action.",
+        "The Kariba project has retained substantial forest cover across the project area.",
+        "Community benefits agreements signed with local stewards totaling 785,000 hectares of protected forest.",
+        "This project is fully verified under VCS and delivers genuine, additional climate benefit."
+      ],
+      "context": "Center of 2023 controversy after investigations questioned baseline deforestation assumptions. Canonical test case for auditor systems."
+    },
+    {
+      "id": "VCS-0934",
+      "name": "Alto Mayo Conservation Initiative",
+      "country": "Peru",
+      "lat": -6.00,
+      "lon": -77.40,
+      "project_type": "REDD+",
+      "date_start": "2016-07-01",
+      "date_end": "2016-10-31",
+      "date_after_start": "2023-07-01",
+      "date_after_end": "2023-10-31",
+      "claimed_forest_cover_pct": 88.0,
+      "synthetic_forest_bias_before": 0.85,
+      "synthetic_forest_bias_after": 0.79,
+      "summary_claims": [
+        "Alto Mayo Protected Forest covers 182,000 hectares of tropical montane forest.",
+        "Baseline deforestation rate estimated at 1.2% annually pre-project.",
+        "Project area covers 182,000 hectares of primary cloud forest.",
+        "VM0015 methodology applied with 20% buffer contribution.",
+        "Field patrols operate across 12 patrol routes totaling 428 km."
+      ],
+      "context": "One of the largest REDD+ projects in the Amazon; generally regarded as well-documented."
+    },
+    {
+      "id": "VCS-1112",
+      "name": "Cordillera Azul National Park REDD+",
+      "country": "Peru",
+      "lat": -7.60,
+      "lon": -76.10,
+      "project_type": "REDD+",
+      "date_start": "2017-06-01",
+      "date_end": "2017-09-30",
+      "date_after_start": "2023-06-01",
+      "date_after_end": "2023-09-30",
+      "claimed_forest_cover_pct": 92.5,
+      "synthetic_forest_bias_before": 0.88,
+      "synthetic_forest_bias_after": 0.74,
+      "summary_claims": [
+        "Cordillera Azul spans 1.35 million hectares of Amazonian forest.",
+        "Total credits issued to date: 29 million VCUs over the crediting period.",
+        "Monitoring plots: 138 permanent sample plots of 0.1 hectare each.",
+        "Project is committed to world-class forest protection and community uplift.",
+        "Leakage estimated at 10% using VT0001 tool and discounted from net credits."
+      ],
+      "context": "Large-scale project; mix of specific and vague language in PDD."
+    },
+    {
+      "id": "VCS-1396",
+      "name": "Southern Cardamom REDD+",
+      "country": "Cambodia",
+      "lat": 11.30,
+      "lon": 103.50,
+      "project_type": "REDD+",
+      "date_start": "2016-05-01",
+      "date_end": "2016-08-31",
+      "date_after_start": "2023-05-01",
+      "date_after_end": "2023-08-31",
+      "claimed_forest_cover_pct": 78.0,
+      "synthetic_forest_bias_before": 0.72,
+      "synthetic_forest_bias_after": 0.58,
+      "summary_claims": [
+        "Our project protects 497,000 hectares of rainforest in the Cardamom Mountains.",
+        "We deliver genuine and lasting climate impact through community-led conservation.",
+        "Our safeguards are best in class.",
+        "Community benefits reached over 16,000 residents across 29 villages.",
+        "Annual monitoring reports filed with Verra since 2017."
+      ],
+      "context": "High-profile project with ongoing scrutiny over community consent and outcomes."
+    },
+    {
+      "id": "SYN-DEMO-01",
+      "name": "Demo Scenario: Healthy Reforestation Site",
+      "country": "Synthetic",
+      "lat": -3.50,
+      "lon": -62.00,
+      "project_type": "Afforestation / Reforestation",
+      "date_start": "2016-06-01",
+      "date_end": "2016-09-30",
+      "date_after_start": "2023-06-01",
+      "date_after_end": "2023-09-30",
+      "claimed_forest_cover_pct": 82.0,
+      "synthetic_forest_bias_before": 0.68,
+      "synthetic_forest_bias_after": 0.84,
+      "summary_claims": [
+        "Baseline above-ground biomass: 78 tC per hectare as measured via LiDAR in 2016.",
+        "Between 2016 and 2023, canopy cover increased from 68% to 84% per Sentinel-2 analysis.",
+        "Total area planted: 4,120 hectares of native species across 3 contiguous parcels.",
+        "Validation conducted by a third-party auditor in October 2022.",
+        "Net GHG removals in 2022: 38,240 tCO2e after buffer contribution."
+      ],
+      "context": "Synthetic 'good project' case, to contrast with Kariba for the demo."
+    }
+  ]
+}
