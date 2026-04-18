@@ -87,6 +87,12 @@ def fetch_sentinel2_tile(
     # 2. Try Planetary Computer
     try:
         bands, meta = _fetch_from_planetary_computer(lat, lon, date_start, date_end)
+        # Validate tile is not empty/all-zero (happens when GDAL can't stream COGs)
+        if bands.mean() < 10.0:
+            raise RuntimeError(
+                f"Planetary Computer returned an empty tile (mean={bands.mean():.2f}) — "
+                "likely a GDAL/network streaming issue. Falling back to synthetic."
+            )
         np.savez_compressed(path, bands=bands, meta=np.array(meta, dtype=object))
         log.info(f"Fetched and cached tile from Planetary Computer: {meta.get('scene_id')}")
         return bands, meta
@@ -95,12 +101,12 @@ def fetch_sentinel2_tile(
         if not allow_synthetic_fallback:
             raise
 
-    # 3. Synthetic fallback
+    # 3. Synthetic fallback — always use the per-project bias if provided
     year = int(date_start[:4])
     bias = synthetic_forest_bias if synthetic_forest_bias is not None else 0.7
     bands = _synthetic_tile(lat, lon, year, forest_bias=bias)
     meta = {"source": "synthetic_fallback", "year": year, "forest_bias": bias}
-    log.warning(f"Using synthetic tile for ({lat:.3f}, {lon:.3f}) {year} - no network/STAC")
+    log.info(f"Using synthetic tile for ({lat:.3f}, {lon:.3f}) {year} with forest_bias={bias:.2f}")
     return bands, meta
 
 
