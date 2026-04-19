@@ -1,5 +1,5 @@
 {
-  "description": "Five real voluntary carbon market projects used as demo cases. The synthetic_forest_bias_before/after fields control the offline fallback so the demo tells the right story even without network. When real Planetary Computer data is available, these fields are ignored.",
+  "description": "Eleven real voluntary carbon market projects used as demo cases. synthetic_forest_bias_before/after control offline fallback so the demo tells the right story without network. When real Planetary Computer data is available, these fields are ignored.",
   "projects": [
     {
       "id": "VCS-0902",
@@ -94,12 +94,150 @@
       "context": "High-profile project with ongoing scrutiny over community consent and outcomes."
     },
     {
+      "id": "VCS-0612",
+      "name": "Kasigau Corridor REDD+",
+      "country": "Kenya",
+      "lat": -3.50,
+      "lon": 38.70,
+      "project_type": "REDD+ (Dry Forest Conservation)",
+      "date_start": "2016-04-01",
+      "date_end": "2016-07-31",
+      "date_after_start": "2023-04-01",
+      "date_after_end": "2023-07-31",
+      "claimed_forest_cover_pct": 72.0,
+      "synthetic_forest_bias_before": 0.67,
+      "synthetic_forest_bias_after": 0.71,
+      "summary_claims": [
+        "Project area: 500,000 hectares of Acacia-Commiphora dry forest between Tsavo East and West parks.",
+        "Baseline deforestation rate: 0.6% per year (2000-2010) using Hansen Global Forest Change data.",
+        "302 permanent employees recruited from 6 local communities; census-verified headcount June 2022.",
+        "Annual monitoring by Wildlife Works Carbon using Landsat 8 cloud-masked composites at 30m resolution.",
+        "Total VCUs issued 2011-2022: 3,184,000; retired by corporates: 2,071,400."
+      ],
+      "context": "Widely regarded as one of Africa's most transparent and legitimate REDD+ projects. Often cited as a model by UNFCCC."
+    },
+    {
+      "id": "VCS-0875",
+      "name": "Mai Ndombe REDD+",
+      "country": "DR Congo",
+      "lat": -2.15,
+      "lon": 17.50,
+      "project_type": "REDD+ (Tropical Forest)",
+      "date_start": "2016-06-01",
+      "date_end": "2016-09-30",
+      "date_after_start": "2023-06-01",
+      "date_after_end": "2023-09-30",
+      "claimed_forest_cover_pct": 88.0,
+      "synthetic_forest_bias_before": 0.79,
+      "synthetic_forest_bias_after": 0.53,
+      "summary_claims": [
+        "Mai Ndombe represents transformative climate leadership in the Congo Basin.",
+        "Our project delivers significant environmental and social co-benefits.",
+        "We are committed to the highest standards of forest protection.",
+        "Credits issued represent genuine, additional climate action.",
+        "The project area has retained substantial forest cover under our stewardship."
+      ],
+      "context": "One of the world's largest REDD+ projects (~3M ha). Came under scrutiny in 2023 over baseline inflation and community displacement allegations."
+    },
+    {
+      "id": "VCS-0985",
+      "name": "Surui Forest Carbon Project",
+      "country": "Brazil",
+      "lat": -11.50,
+      "lon": -60.00,
+      "project_type": "REDD+ (Indigenous Territory)",
+      "date_start": "2016-06-01",
+      "date_end": "2016-09-30",
+      "date_after_start": "2023-06-01",
+      "date_after_end": "2023-09-30",
+      "claimed_forest_cover_pct": 90.0,
+      "synthetic_forest_bias_before": 0.88,
+      "synthetic_forest_bias_after": 0.77,
+      "summary_claims": [
+        "The Surui indigenous territory covers 248,147 hectares of Amazon rainforest.",
+        "Baseline deforestation was 1.47% per year from 2001-2009 (INPE PRODES data).",
+        "Forest patrols carried out by 58 Surui warriors trained in GPS and field data collection.",
+        "Above-ground carbon stock: 168 tC/ha measured via 96 allometric sampling plots in 2010.",
+        "Net emission reductions verified by SGS S.A. for 2010-2012 period: 996,000 tCO2e."
+      ],
+      "context": "Pioneering indigenous-led REDD+ project. Suspended in 2018 due to illegal logging incursions; partially reinstated. Mixed record of credibility."
+    },
+    {
+      "id": "VCS-0674",
+      "name": "Rimba Raya Biodiversity Reserve",
+      "country": "Indonesia",
+      "lat": -2.30,
+      "lon": 112.20,
+      "project_type": "REDD+ (Peatland Forest)",
+      "date_start": "2016-05-01",
+      "date_end": "2016-08-31",
+      "date_after_start": "2023-05-01",
+      "date_after_end": "2023-08-31",
+      "claimed_forest_cover_pct": 82.0,
+      "synthetic_forest_bias_before": 0.78,
+      "synthetic_forest_bias_after": 0.70,
+      "summary_claims": [
+        "Rimba Raya protects 64,531 hectares of peat swamp forest in Central Kalimantan.",
+        "Baseline scenario: conversion to oil palm plantation at 100% probability per provincial permit.",
+        "Peat depth measured at 214 sample points; mean depth 3.4 m across project area.",
+        "Annual fire monitoring using MODIS active fire alerts; 6 suppression events in 2022.",
+        "Biodiversity co-benefits: 36 Bornean orangutan nest sites confirmed in 2021 survey."
+      ],
+      "context": "Frequently cited as a technically rigorous project. Delayed for years by Indonesian government permit disputes. Generally medium-high integrity."
+    },
+    {
+      "id": "VCS-1468",
+      "name": "Ntakata Forest REDD+",
+      "country": "Tanzania",
+      "lat": -6.60,
+      "lon": 30.90,
+      "project_type": "REDD+ (Miombo Woodland)",
+      "date_start": "2016-07-01",
+      "date_end": "2016-10-31",
+      "date_after_start": "2023-07-01",
+      "date_after_end": "2023-10-31",
+      "claimed_forest_cover_pct": 80.0,
+      "synthetic_forest_bias_before": 0.71,
+      "synthetic_forest_bias_after": 0.61,
+      "summary_claims": [
+        "Ntakata Forest covers 386,000 hectares of Miombo woodland near Katavi National Park.",
+        "Historical deforestation: 1.9% per year (2010-2016) validated using GFC Hansen v1.6.",
+        "We are committed to protecting nature and empowering local communities.",
+        "200 village boundary markers GPS-referenced and filed with district land office.",
+        "Monitoring uses annual Landsat 8 composites processed in Google Earth Engine."
+      ],
+      "context": "Mid-sized Tanzanian project with mixed track record. Claimed deforestation baseline is higher than nearby reference regions, raising additionality concerns."
+    },
+    {
+      "id": "ACR-0522",
+      "name": "CAR REDD+ Klamath East",
+      "country": "USA",
+      "lat": 41.50,
+      "lon": -122.50,
+      "project_type": "Improved Forest Management (IFM)",
+      "date_start": "2016-04-01",
+      "date_end": "2016-07-31",
+      "date_after_start": "2023-04-01",
+      "date_after_end": "2023-07-31",
+      "claimed_forest_cover_pct": 92.0,
+      "synthetic_forest_bias_before": 0.85,
+      "synthetic_forest_bias_after": 0.87,
+      "summary_claims": [
+        "Project area: 48,210 acres of mixed conifer forest in Siskiyou County, California.",
+        "Enrolled under California Air Resources Board (CARB) Compliance Offset Protocol for U.S. Forest Projects.",
+        "100-year timber harvest schedule deferred; verified harvest volumes: 0 MMBF in 2020-2022 period.",
+        "Carbon stocks verified by South Pole Group using USFS FIA allometric equations.",
+        "Total ARB offset credits issued: 187,432; all retired by California compliance entities."
+      ],
+      "context": "Regulated under California cap-and-trade. Strong oversight by CARB with third-party verification. One of the more credible project types globally."
+    },
+    {
       "id": "SYN-DEMO-01",
-      "name": "Demo Scenario: Healthy Reforestation Site",
+      "name": "Demo: Healthy Reforestation Site",
       "country": "Synthetic",
       "lat": -3.50,
       "lon": -62.00,
-      "project_type": "Afforestation / Reforestation",
+      "project_type": "Afforestation / Reforestation (A/R)",
       "date_start": "2016-06-01",
       "date_end": "2016-09-30",
       "date_after_start": "2023-06-01",
@@ -114,7 +252,7 @@
         "Validation conducted by a third-party auditor in October 2022.",
         "Net GHG removals in 2022: 38,240 tCO2e after buffer contribution."
       ],
-      "context": "Synthetic 'good project' case, to contrast with Kariba for the demo."
+      "context": "Synthetic 'good project' control case — increasing forest cover, specific numbers, third-party verified. Designed to contrast with Kariba."
     }
   ]
 }

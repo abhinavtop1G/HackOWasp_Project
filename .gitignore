@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+.env
+
+# Model weights — too large for GitHub (>100MB)
+# Re-generate with: python -m scripts.train
+data/models/
+
+# Satellite tile cache
+data/cached_tiles/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db

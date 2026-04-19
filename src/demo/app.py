@@ -17,6 +17,27 @@ import plotly.express as px
 import streamlit as st
 
 from src import config
+
+# ── Auto-train on cold start (Streamlit Cloud has no pre-built models) ──────
+def _bootstrap_models():
+    """Train forest + greenwashing models if missing (first deploy / cold start)."""
+    import pathlib
+    forest_ok = pathlib.Path(config.FOREST_CLASSIFIER_PATH).exists()
+    gw_ok     = pathlib.Path(config.GREENWASHING_MODEL_DIR).exists()
+    if forest_ok and gw_ok:
+        return
+    with st.spinner("⚙️ First-time setup: training ML models (~2 min) …"):
+        if not forest_ok:
+            from src.satellite.forest_classifier import train as train_forest
+            train_forest()
+        if not gw_ok:
+            from src.nlp.train_greenwashing import train as train_gw
+            train_gw()
+    st.success("✅ Models ready!", icon="🤖")
+    st.rerun()
+
+_bootstrap_models()
+
 from src.fusion.integrity_score import build_report
 from src.nlp.greenwashing_scorer import GreenwashingScorer
 from src.satellite.change_detection import compare_tiles, render_comparison_png
