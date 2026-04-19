@@ -25,14 +25,6 @@ import streamlit as st
 
 from src import config
 
-# ── set_page_config MUST be the very first Streamlit call ──────────────────
-st.set_page_config(
-    page_title="VerifEarth — Carbon Credit Auditor",
-    page_icon="🌍",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
 # ── Auto-train on cold start ────────────────────────────────────────────────
 def _bootstrap_models():
     """Train fast models on cold start. Uses session_state to avoid re-running."""
