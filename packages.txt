@@ -1,4 +1,2 @@
-# System dependencies for Streamlit Community Cloud (Ubuntu)
 libgdal-dev
 gdal-bin
-python3-gdal
