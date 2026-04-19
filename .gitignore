@@ -4,14 +4,16 @@ __pycache__/
 *.pyo
 *.egg-info/
 .venv/
+.venv_deploy/
 .env
 
-# Model weights — too large for GitHub (>100MB)
-# Re-generate with: python -m scripts.train
-data/models/
+# Model weights — DistilBERT is too large for GitHub (>100MB)
+# forest_classifier.joblib is tiny (1.5KB) and IS committed
+data/models/greenwashing_distilbert/
 
 # Satellite tile cache
 data/cached_tiles/
+data/cached_results/
 
 # Streamlit
 .streamlit/secrets.toml
