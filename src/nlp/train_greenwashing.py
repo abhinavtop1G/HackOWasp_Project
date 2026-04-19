@@ -19,15 +19,20 @@ import random
 from pathlib import Path
 
 import numpy as np
-import torch
 from sklearn.metrics import classification_report, f1_score
 from sklearn.model_selection import train_test_split
-from torch.utils.data import DataLoader, Dataset
-from transformers import (
+
+# torch/transformers imported lazily — not available on cloud deployment
+try:
+    import torch
+    from torch.utils.data import DataLoader, Dataset
+    from transformers import (
     AutoModelForSequenceClassification,
     AutoTokenizer,
     get_linear_schedule_with_warmup,
 )
+except ImportError:
+    torch = None  # type: ignore
 
 from src import config
 

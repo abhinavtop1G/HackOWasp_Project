@@ -1,20 +1,19 @@
-# Use CPU-only PyTorch — much smaller (~200MB vs 2.5GB for CUDA)
-# This is required for Streamlit Community Cloud free tier
---extra-index-url https://download.pytorch.org/whl/cpu
-torch>=2.1.0
+# VerifEarth - Streamlit Cloud requirements
+# torch + transformers are NOT included here:
+#   - Cloud mode uses rule-based greenwashing scorer (no model needed)
+#   - Removing torch cuts install from ~10min/1GB to ~90sec/150MB
+#   - For local dev with full DistilBERT, pip install torch transformers separately
 
-# Transformers + ML
-transformers>=4.36.0
-safetensors>=0.4.0
+# Core ML (lightweight)
 scikit-learn>=1.3.0
 numpy>=1.24.0
 joblib>=1.3.0
 
-# NLP
+# NLP / PDF
 pypdf>=3.17.0
 pdfplumber>=0.10.0
 
-# Geospatial / satellite
+# Geospatial
 rasterio>=1.3.8
 pystac-client>=0.7.5
 planetary-computer>=1.0.0
@@ -30,4 +29,3 @@ streamlit>=1.29.0
 
 # Utilities
 python-dotenv>=1.0.0
-tqdm>=4.66.0

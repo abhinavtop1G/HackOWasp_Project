@@ -26,22 +26,17 @@ import streamlit as st
 from src import config
 
 # ── Auto-train on cold start (Streamlit Cloud has no pre-built models) ──────
+@st.cache_resource(show_spinner="⚙️ One-time setup: training forest classifier (< 3 seconds)...")
 def _bootstrap_models():
-    """Train forest + greenwashing models if missing (first deploy / cold start)."""
-    import pathlib
-    forest_ok = pathlib.Path(config.FOREST_CLASSIFIER_PATH).exists()
-    gw_ok     = pathlib.Path(config.GREENWASHING_MODEL_DIR).exists()
-    if forest_ok and gw_ok:
-        return
-    with st.spinner("⚙️ First-time setup: training ML models (~2 min) …"):
-        if not forest_ok:
-            from src.satellite.forest_classifier import train as train_forest
-            train_forest()
-        if not gw_ok:
-            from src.nlp.train_greenwashing import train as train_gw
-            train_gw()
-    st.success("✅ Models ready!", icon="🤖")
-    st.rerun()
+    """
+    Train only the fast models on cold start.
+    DistilBERT is NOT trained here — cloud mode uses the rule-based
+    greenwashing scorer which needs no training and no torch.
+    """
+    if not config.FOREST_CLASSIFIER_PATH.exists():
+        from src.satellite.forest_classifier import train as train_forest
+        train_forest()
+    return True
 
 _bootstrap_models()
 
