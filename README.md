@@ -9,16 +9,10 @@ app_file: app.py
 pinned: true
 ---
 
-# VerifEarth
+# VerifEarth — Carbon Credit Auditor
 
 **Independent AI audit layer for carbon-credit integrity.** Built at HackOWASP 8.0.
 
-Compares a carbon project's claimed forest retention against what Sentinel-2 satellites actually see, runs the project's claims through a greenwashing classifier, and fuses everything into a single **Integrity Score (0–100)**.
+Compares a carbon project's claimed forest retention against what Sentinel-2 satellites actually see, then fuses satellite truth + NLP greenwashing detection into a single **Integrity Score (0–100)**.
 
-## Tracks
-- 🛰️ Sentinel-2 satellite change detection
-- 🤖 NLP greenwashing claim scorer  
-- 🔒 OWASP-aligned provenance hashing
-- 📊 Integrity Score fusion engine
-
-Built in 18 hours at HackOWASP 8.0 | Climate Action (SDG-13)
+Built in 18 hours | Climate Action SDG-13 | OWASP-aligned
