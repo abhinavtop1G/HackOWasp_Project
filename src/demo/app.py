@@ -25,18 +25,24 @@ import streamlit as st
 
 from src import config
 
-# ── Auto-train on cold start (Streamlit Cloud has no pre-built models) ──────
-@st.cache_resource(show_spinner="⚙️ One-time setup: training forest classifier (< 3 seconds)...")
+# ── set_page_config MUST be the very first Streamlit call ──────────────────
+st.set_page_config(
+    page_title="VerifEarth — Carbon Credit Auditor",
+    page_icon="🌍",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+# ── Auto-train on cold start ────────────────────────────────────────────────
 def _bootstrap_models():
-    """
-    Train only the fast models on cold start.
-    DistilBERT is NOT trained here — cloud mode uses the rule-based
-    greenwashing scorer which needs no training and no torch.
-    """
+    """Train fast models on cold start. Uses session_state to avoid re-running."""
+    if st.session_state.get("_models_ready"):
+        return
     if not config.FOREST_CLASSIFIER_PATH.exists():
-        from src.satellite.forest_classifier import train as train_forest
-        train_forest()
-    return True
+        with st.spinner("⚙️ One-time setup: training forest classifier (~3 seconds)..."):
+            from src.satellite.forest_classifier import train as train_forest
+            train_forest()
+    st.session_state["_models_ready"] = True
 
 _bootstrap_models()
 
@@ -45,16 +51,6 @@ from src.nlp.greenwashing_scorer import GreenwashingScorer
 from src.satellite.change_detection import compare_tiles, render_comparison_png
 from src.satellite.forest_classifier import load_classifier
 from src.satellite.planetary_computer_client import fetch_sentinel2_tile
-
-# ─────────────────────────────────────────────────────────
-#  Page config
-# ─────────────────────────────────────────────────────────
-st.set_page_config(
-    page_title="VerifEarth — Carbon Credit Auditor",
-    page_icon="🌍",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
 
 # ─────────────────────────────────────────────────────────
 #  Global CSS  — dark glassmorphism theme
