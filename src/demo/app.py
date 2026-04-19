@@ -5,11 +5,18 @@ per-claim probability bars, project map, NDVI trend line.
 """
 from __future__ import annotations
 
+import sys
+import os
+from pathlib import Path
+
+# ── Streamlit Cloud path fix ─────────────────────────────────────────────────
+# parents[2] of src/demo/app.py  =  repo root (/mount/src/hackowasp_project)
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 import hashlib
 import json
 import tempfile
 import time
-from pathlib import Path
 
 import numpy as np
 import plotly.graph_objects as go
